@@ -1,0 +1,20 @@
+.container {
+  background: #EC4141;
+  color: white;
+  line-height: 60px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 15% 25% 60%;
+
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .2em;
+    & > span {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+  }
+}
