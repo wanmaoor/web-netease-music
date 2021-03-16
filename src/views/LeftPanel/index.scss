@@ -1,8 +1,9 @@
 .left-pane-container {
   padding: 12px;
-  height: 95%;
-  background-color: red;
   overflow-y: hidden;
+  height: calc(100% - 120px);
+
+  z-index: 4;
   &:hover{
     overflow-y: scroll;
   }

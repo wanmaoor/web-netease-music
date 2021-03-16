@@ -39,7 +39,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -47,7 +47,7 @@ html {
 } /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #E0E0E0;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* Handle on hover */

@@ -3,9 +3,10 @@ import SplitPane from 'react-split-pane';
 import './index.scss';
 import LeftPanel from '../LeftPanel';
 import RightPanel from '../RightPanel';
+import Player from '../Player';
 const Main = () => {
   return (
-    <>
+    <div className='main-container'>
       <Nav />
       <div className="Resizer" style={{ marginTop: 60 }}>
         <SplitPane
@@ -18,7 +19,8 @@ const Main = () => {
           <RightPanel />
         </SplitPane>
       </div>
-    </>
+      <Player />
+    </div>
   );
 };
 

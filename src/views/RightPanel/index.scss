@@ -1,6 +1,6 @@
 .right-panel-container {
   padding: 12px;
-  height: 95%;
+  height: calc(100% - 120px);
   overflow-y: hidden;
   &:hover{
     overflow-y: scroll;
