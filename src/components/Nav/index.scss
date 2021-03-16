@@ -1,14 +1,19 @@
 .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: #EC4141;
   color: white;
   line-height: 60px;
   height: 60px;
   display: grid;
   grid-template-columns: 15% 25% 60%;
+  z-index: 3;
 
   .title{
     display: flex;
-    justify-content: center;
+    padding-left: 8px;
     align-items: center;
     letter-spacing: .2em;
     & > span {
