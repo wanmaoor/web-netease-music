@@ -2,8 +2,10 @@
   padding: 12px;
   height: 95%;
   background-color: red;
-  overflow-y: scroll;
-
+  overflow-y: hidden;
+  &:hover{
+    overflow-y: scroll;
+  }
   .list-container{
     display: flex;
     flex-direction: column;
