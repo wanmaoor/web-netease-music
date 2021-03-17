@@ -5,11 +5,7 @@
 
   z-index: 4;
   &:hover{
-    overflow-y: scroll;
+    overflow-y: overlay;
   }
-  .list-container{
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-  }
+ 
 }

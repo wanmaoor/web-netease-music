@@ -1,4 +1,5 @@
 import {combineReducers} from "redux";
-import test from "./test";
+import leftPaneReducer from "../../views/LeftPanel/reducer";
 
-export default combineReducers({test})
+
+export default combineReducers({leftPaneReducer})

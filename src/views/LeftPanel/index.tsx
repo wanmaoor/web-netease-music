@@ -1,129 +1,21 @@
-import './index.scss'
-const LeftPanel = ()=>{
-  return(
-    <div className="left-pane-container">
-      <ul className="list-container">
-        <li>发现音乐</li>
-        <li>视频</li>
-        <li>朋友</li>
-        <li>直播</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-        <li>私人FM</li>
-      </ul>
-    </div>
-  )
-}
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import List from 'src/components/List';
+import { IReducer } from 'src/interface';
+import { CHANGE_ACTIVE_KEY } from './action';
+import './index.scss';
 
-export default LeftPanel
+const LeftPanel = () => {
+  const dispatch = useDispatch();
+  const { activeKey } = useSelector((state: IReducer) => state.leftPaneReducer);
+  const handleClick = (key: string) => {
+    dispatch({ type: CHANGE_ACTIVE_KEY, payload: key });
+  };
+  return (
+    <div className="left-pane-container">
+      <List activeKey={activeKey} handleClick={handleClick} />
+    </div>
+  );
+};
+
+export default LeftPanel;
