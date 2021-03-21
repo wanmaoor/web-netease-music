@@ -1,5 +1,5 @@
 import {Provider} from 'react-redux'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
 import store from './store/index'
 import './App.css';
 import Main from "./views/Main";
@@ -9,7 +9,11 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route path={'/'} exact={true} component={Main} />
+          <Route path={'/'} exact={true}>
+            <Redirect to={'/main/discover'} />
+          </Route>
+          <Route path='/main' component={Main}>
+          </Route>
         </Switch>
       </Router>
     </Provider>

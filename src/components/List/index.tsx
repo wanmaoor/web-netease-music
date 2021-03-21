@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import React, { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import './index.scss';
 const mainArr = [
-  { key: 'discover', name: '发现音乐' },
-  { key: 'videos', name: '视频' },
-  { key: 'friends', name: '朋友' },
-  { key: 'lives', name: '直播' },
+  { key: 'discover', name: '发现音乐', path: '/' },
+  { key: 'videos', name: '视频', path: '/main/videos' },
+  { key: 'friends', name: '朋友', path: '/main/friends' },
 ];
 interface IListProps {
   handleClick: (key: string, e: React.MouseEvent) => void;
@@ -30,12 +30,13 @@ const List = (props: IListProps) => {
       <ul onClick={onClick} className="list-ul">
         {mainArr.map((item) => {
           return (
-            <li
-              className={classNames({ active: activeKey === item.key })}
-              key={item.key}
-            >
-              {item.name}
-            </li>
+            <Link to={item.path} style={{ color: '#2e2d2d' }} key={item.key}>
+              <li
+                className={classNames({ active: activeKey === item.key })}
+              >
+                {item.name}
+              </li>
+            </Link>
           );
         })}
       </ul>
